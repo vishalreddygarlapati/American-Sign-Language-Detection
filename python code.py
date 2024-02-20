@@ -123,8 +123,8 @@ class Classifier:
 
 cap = cv2.VideoCapture(0)            #capturing the live video
 detector = Detect_hands(maxHands=1)
-model_name = "Model/keras_model.h5"
-model_labels = "Model/labels.txt"
+model_name = "keras_model.h5"
+model_labels = "labels.txt"
 classifier = Classifier(model_name,model_labels)
 
 offset = 20
