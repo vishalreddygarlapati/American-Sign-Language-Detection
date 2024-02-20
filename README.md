@@ -1,17 +1,16 @@
 # American-Sign-Language-Detection
-The aim of this project is to detect ASL along with some custom gestures(space,delete) from a live video stream. I have achieved this with an accuracy of more than 90%
 
-How to run the code:
+# Overview
+The project is a hand tracking application that uses computer vision techniques to detect and recognize sign language gestures. The user makes hand gestures in front of a camera, and the application processes the video stream to identify the hand movements and recognize the corresponding sign language gesture. The output of the application is the recognized gesture displayed on the video stream.
 
-Step1 (Run the run.bat):
-1) Directly run the run.bat file and see the output.
-2) Once after the code starts running we need to manually terminate the program (CTRL+C) to stop the program.
+# Approach
+● The code uses Mediapipe library, to detect hands and landmarks in a video stream or image, and the TensorFlow library to classify the American Sign Language alphabet. The program initializes a video capture object and sets up the hand detector and the classifier. It then loops through the video frames and passes each frame to the hand detector to detect the hand landmarks. If a hand is detected, the landmarks are passed to the classifier to predict the alphabet sign. Finally, the predicted alphabet is displayed on the video stream along with the hand detection and landmarks.
+● The Detect_hands class is used to detect hands and landmarks. It takes in two arguments, maxHands and mode, and initializes the Hands and DrawingUtils classes from the Mediapipe library. The maxHands argument specifies the maximum number of hands to detect, and the mode argument specifies whether to run in static image mode or video mode. The predHands method takes in an image frame, processes it using the Hands class, and returns the detected hands and landmarks.
+● The Classifier class is used to classify the American Sign Language alphabet. It takes in the path to the model file and the path to the labels file as arguments. The predict_alphabet method takes in an image frame, processes it using the model, and returns the predicted alphabet.
 
-Step2 (Running the .py file):
-1) For the python_code.py code to run first we need to install tensorflow.
-2) We need to keep the model folder in the same folder as the python code.
-3) Then we can directly run the python code and we can test the code.
-4) Once after the code starts running we need to manually terminate the program (CTRL+C) to stop the program.
+# Result
+My results demonstrate the effectiveness of our model in recognizing the ASL alphabet with high accuracy. However, further improvements can be made to reduce the confusion between similar signs.
 
-Note:-
-- There is this zip folder called (trainingimages(A-Z)) which contains 28 sample images for all the alphabets.
+Below are the images taken after testing my model in real time.
+![image](https://github.com/vishalreddygarlapati/American-Sign-Language-Detection/assets/113934795/ef50e711-b67a-4e68-992d-bfe99cdfe1bb)
+![image](https://github.com/vishalreddygarlapati/American-Sign-Language-Detection/assets/113934795/a0f9066c-1b57-44c8-8276-b4b64bf44dda)
